@@ -13,6 +13,7 @@ class VerseObjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = VerseObject
         fields = ('id', 'name', 'group_id', 'file')
+        read_only = ('group_id',)
 
 
 class VerseProjectSerializer(serializers.ModelSerializer):
