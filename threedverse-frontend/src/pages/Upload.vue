@@ -2,14 +2,17 @@
   <div class="q-pa-md">
     <q-form
       class="q-gutter-md"
+      @submit="onSubmit"
     >
       <q-input
         filled
+        v-model="name"
         label="Model Name"
       />
 
       <q-input
         filled
+        v-model="description"
         label="Description"
         type="textarea"
         rows="12"
@@ -43,7 +46,11 @@
         </template>
       </q-file>
       <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
+        <q-btn label="Submit" type="submit" :color="color" :loading="submitting">
+          <template v-slot:loading>
+            <q-spinner-facebook/>
+          </template>
+        </q-btn>
       </div>
     </q-form>
   </div>
@@ -55,7 +62,31 @@ export default {
   data() {
     return {
       modelFiles: null,
-      galleryFiles: null
+      galleryFiles: null,
+      description: null,
+      name: null,
+      color: "primary",
+      submitting: false,
+    }
+  },
+  methods: {
+    onSubmit(evt) {
+      this.submitting = true
+      this.$axios.post('projects/', {
+        name: this.name,
+        description: this.description
+      }).then((response) => {
+        this.submitting = false
+        this.name = null
+        this.description = null
+        this.$router.push('/project/')
+      }).catch(() => {
+        this.submitting = false
+        this.color = 'negative'
+        setTimeout(() => {
+          this.color = 'primary'
+        }, 1000)
+      })
     }
   }
 }
