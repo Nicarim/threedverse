@@ -1,0 +1,44 @@
+{
+  "name": "threedverse-frontend",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "3DVerse open source repository of 3d printing projects",
+  "cordovaId": "org.cordova.quasar.app",
+  "capacitorId": "",
+  "author": "Marcin Gordziejewski <marcin.gord@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "build:pwa": "quasar build -m pwa",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore ./",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.8.2",
+    "@vue/composition-api": "^0.6.3",
+    "quasar": "^1.12.4"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.9.6",
+    "@types/node": "^10.17.15",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-vue": "^6.1.2"
+  },
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ],
+  "resolutions": {
+    "@babel/parser": "7.7.5"
+  }
+}
