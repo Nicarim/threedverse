@@ -21,7 +21,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xi!5&vugwd-=j+kd%1=^7kq(vg6a39@g)&0c!&42h2&b27r!@s'
+SECRET_KEY = os.getenv('SECRET_KEY', 'testing-only-key-change-me-pls')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Apps
     'users',
+    'rest_framework',
     'object_storage',
 ]
 
