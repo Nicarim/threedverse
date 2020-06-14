@@ -63,9 +63,16 @@
           {
             title: 'Projects List',
             caption: 'list',
-            icon: 'school',
+            icon: 'dashboard',
             link: '/projects/'
           },
+          {
+            title: 'Upload new model',
+            caption: 'list',
+            icon: 'eject',
+            link: '/upload/'
+          },
+
         ]
       }
     }

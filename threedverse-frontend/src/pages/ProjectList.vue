@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div>
-      <header class="text-h3 q-mb-sm">Trending Projects</header>
+      <header class="text-h3 q-mb-sm">All Projects</header>
       <div class="q-pa-sm">
         <div class="row q-col-gutter-md">
           <div v-for="num in 10" :key="num" class="overflow-auto">
